@@ -1,0 +1,1131 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   FreshVerde E-Commerce Prototype
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   /* Scrollbar for chat window */
+    .chat-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .chat-scroll::-webkit-scrollbar-thumb {
+      background-color: #4ade80;
+      border-radius: 3px;
+    }
+  </style>
+ </head>
+ <body class="bg-beige-50 font-sans text-black min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-beige-50 border-b border-green-600 sticky top-0 z-50">
+   <nav class="max-w-7xl mx-auto flex items-center justify-between p-4 md:p-6">
+    <a class="flex items-center space-x-2" href="#" id="nav-home">
+     <img alt="FreshVerde logo green square with FV letters" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/946116fa-d616-4684-0435-b5e5b7ab95a9.jpg" width="40"/>
+     <span class="font-bold text-xl text-green-700">
+      FreshVerde
+     </span>
+    </a>
+    <ul class="hidden md:flex space-x-8 font-semibold text-black">
+     <li>
+      <a class="hover:text-green-700" href="#" id="nav-home-link">
+       Home
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-green-700" href="#" id="nav-products-link">
+       Products
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-green-700" href="#" id="nav-customer-service-link">
+       Customer Service
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-green-700 relative" href="#" id="nav-cart-link">
+       Cart
+       <span class="absolute -top-2 -right-3 bg-green-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" id="cart-count">
+        0
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-green-700" href="#" id="nav-account-link">
+       My Account
+      </a>
+     </li>
+    </ul>
+    <button aria-label="Toggle menu" class="md:hidden text-green-700 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </nav>
+   <!-- Mobile menu -->
+   <div class="hidden md:hidden bg-beige-50 border-t border-green-600" id="mobile-menu">
+    <ul class="flex flex-col space-y-2 p-4 font-semibold text-black">
+     <li>
+      <a class="block hover:text-green-700" href="#" id="mobile-nav-home">
+       Home
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-green-700" href="#" id="mobile-nav-products">
+       Products
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-green-700" href="#" id="mobile-nav-customer-service">
+       Customer Service
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-green-700 relative" href="#" id="mobile-nav-cart">
+       Cart
+       <span class="absolute top-0 right-0 bg-green-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold" id="mobile-cart-count">
+        0
+       </span>
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-green-700" href="#" id="mobile-nav-account">
+       My Account
+      </a>
+     </li>
+    </ul>
+   </div>
+  </header>
+  <!-- Main content container -->
+  <main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-8">
+   <!-- Pages container -->
+   <section class="page" id="page-home">
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">
+     <img alt="Hero image of FreshVerde eco detergent bottle placed in a natural green environment with leaves and sunlight" class="rounded-lg shadow-lg w-full max-w-md object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/4661e4e5-bb8c-4346-677d-0a0a3307feb6.jpg" width="400"/>
+     <h1 class="text-3xl md:text-4xl font-extrabold text-green-700">
+      Eco-friendly Cleaning for a Greener Home
+     </h1>
+     <p class="text-base md:text-lg text-black/80 px-4">
+      FreshVerde offers a natural, eco-responsible detergent that cleans your home and cares for the planet.
+     </p>
+     <button aria-label="Go to Products page" class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-6 py-3 transition" id="btn-to-products">
+      Shop Now
+     </button>
+    </div>
+   </section>
+   <section class="page hidden" id="page-products">
+    <h2 class="text-2xl font-bold text-green-700 mb-6 text-center">
+     Our Eco-Detergent Sizes
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+     <!-- Product 120 ml -->
+     <div aria-label="Product 120 ml Eco-Detergent" class="border border-green-300 rounded-lg p-4 flex flex-col items-center bg-beige-100 shadow-sm" role="region">
+      <img alt="Eco-Detergent 120 ml bottle with green label and eco-friendly branding" class="w-32 h-32 object-contain mb-4" height="128" src="https://storage.googleapis.com/a1aa/image/478605ee-f7e9-4ec8-672c-3fba58b5fc7f.jpg" width="128"/>
+      <h3 class="text-lg font-semibold text-black mb-1">
+       120 ml
+      </h3>
+      <p class="text-green-700 font-bold text-xl mb-3">
+       $4.99
+      </p>
+      <button aria-label="Add 120 ml Eco-Detergent to cart" class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-4 py-2 transition w-full">
+       Add to Cart
+      </button>
+     </div>
+     <!-- Product 250 ml -->
+     <div aria-label="Product 250 ml Eco-Detergent" class="border border-green-300 rounded-lg p-4 flex flex-col items-center bg-beige-100 shadow-sm" role="region">
+      <img alt="Eco-Detergent 250 ml bottle with green label and eco-friendly branding" class="w-32 h-32 object-contain mb-4" height="128" src="https://storage.googleapis.com/a1aa/image/3af9aa62-d11e-4f4d-1236-ec948df48bf6.jpg" width="128"/>
+      <h3 class="text-lg font-semibold text-black mb-1">
+       250 ml
+      </h3>
+      <p class="text-green-700 font-bold text-xl mb-3">
+       $7.99
+      </p>
+      <button aria-label="Add 250 ml Eco-Detergent to cart" class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-4 py-2 transition w-full">
+       Add to Cart
+      </button>
+     </div>
+     <!-- Product 500 ml -->
+     <div aria-label="Product 500 ml Eco-Detergent" class="border border-green-300 rounded-lg p-4 flex flex-col items-center bg-beige-100 shadow-sm" role="region">
+      <img alt="Eco-Detergent 500 ml bottle with green label and eco-friendly branding" class="w-32 h-32 object-contain mb-4" height="128" src="https://storage.googleapis.com/a1aa/image/08c075c8-c7d8-469d-d31e-95efadc5adf7.jpg" width="128"/>
+      <h3 class="text-lg font-semibold text-black mb-1">
+       500 ml
+      </h3>
+      <p class="text-green-700 font-bold text-xl mb-3">
+       $12.99
+      </p>
+      <button aria-label="Add 500 ml Eco-Detergent to cart" class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-4 py-2 transition w-full">
+       Add to Cart
+      </button>
+     </div>
+     <!-- Product 1 Liter -->
+     <div aria-label="Product 1 Liter Eco-Detergent" class="border border-green-300 rounded-lg p-4 flex flex-col items-center bg-beige-100 shadow-sm" role="region">
+      <img alt="Eco-Detergent 1 Liter bottle with green label and eco-friendly branding" class="w-32 h-32 object-contain mb-4" height="128" src="https://storage.googleapis.com/a1aa/image/af5a8898-4e33-4c38-cf3e-f58aadb32fd6.jpg" width="128"/>
+      <h3 class="text-lg font-semibold text-black mb-1">
+       1 Liter
+      </h3>
+      <p class="text-green-700 font-bold text-xl mb-3">
+       $19.99
+      </p>
+      <button aria-label="Add 1 Liter Eco-Detergent to cart" class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-4 py-2 transition w-full">
+       Add to Cart
+      </button>
+     </div>
+    </div>
+   </section>
+   <section class="page hidden max-w-4xl mx-auto" id="page-cart">
+    <h2 class="text-2xl font-bold text-green-700 mb-6 text-center">
+     Your Cart
+    </h2>
+    <div class="space-y-4 mb-6" id="cart-items">
+     <!-- Cart items inserted here -->
+    </div>
+    <div class="flex justify-between items-center font-semibold text-lg border-t border-green-600 pt-4">
+     <span>
+      Subtotal:
+     </span>
+     <span class="text-green-700" id="cart-subtotal">
+      $0.00
+     </span>
+    </div>
+    <div class="flex justify-end mt-6">
+     <button aria-label="Proceed to checkout" class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-6 py-3 transition disabled:opacity-50 disabled:cursor-not-allowed" disabled="" id="btn-to-checkout">
+      Proceed to Checkout
+     </button>
+    </div>
+   </section>
+   <section class="page hidden max-w-3xl mx-auto" id="page-checkout">
+    <h2 class="text-2xl font-bold text-green-700 mb-6 text-center">
+     Checkout
+    </h2>
+    <form class="space-y-6 bg-beige-100 p-6 rounded-lg shadow-md" id="checkout-form">
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+       <label class="block font-semibold mb-1" for="firstName">
+        First Name
+       </label>
+       <input autocomplete="given-name" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="firstName" name="firstName" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block font-semibold mb-1" for="lastName">
+        Last Name
+       </label>
+       <input autocomplete="family-name" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="lastName" name="lastName" required="" type="text"/>
+      </div>
+     </div>
+     <div>
+      <label class="block font-semibold mb-1" for="phone">
+       Phone Number
+      </label>
+      <input autocomplete="tel" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="phone" name="phone" pattern="^\+?[0-9\s\-]{7,15}$" required="" title="Enter a valid phone number" type="tel"/>
+     </div>
+     <div>
+      <label class="block font-semibold mb-1" for="address">
+       Delivery Address
+      </label>
+      <textarea autocomplete="street-address" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600 resize-none" id="address" name="address" required="" rows="3"></textarea>
+     </div>
+     <div class="border-t border-green-600 pt-4">
+      <h3 class="font-semibold text-lg mb-2">
+       Order Summary
+      </h3>
+      <ul class="list-disc list-inside space-y-1 max-h-40 overflow-y-auto text-black/90" id="checkout-summary">
+      </ul>
+      <p class="mt-3 font-bold text-green-700 text-xl" id="checkout-total">
+       $0.00
+      </p>
+     </div>
+     <button aria-label="Confirm order" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-6 py-3 transition" type="submit">
+      Confirm Order
+     </button>
+    </form>
+   </section>
+   <section class="page hidden max-w-md mx-auto" id="page-account">
+    <div class="space-y-6" id="account-forms">
+     <!-- Login Form -->
+     <form class="space-y-4" id="login-form">
+      <h2 class="text-2xl font-bold text-green-700 text-center">
+       Login
+      </h2>
+      <div>
+       <label class="block font-semibold mb-1" for="loginEmail">
+        Email
+       </label>
+       <input autocomplete="email" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="loginEmail" name="loginEmail" required="" type="email"/>
+      </div>
+      <div>
+       <label class="block font-semibold mb-1" for="loginPassword">
+        Password
+       </label>
+       <input autocomplete="current-password" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="loginPassword" name="loginPassword" required="" type="password"/>
+      </div>
+      <div class="flex justify-between items-center text-sm">
+       <button class="text-blue-600 hover:underline focus:outline-none" id="show-signup" type="button">
+        Create account
+       </button>
+       <button class="text-blue-600 hover:underline focus:outline-none" id="forgot-password" type="button">
+        Forgot Password?
+       </button>
+      </div>
+      <button aria-label="Login" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-6 py-3 transition" type="submit">
+       Login
+      </button>
+     </form>
+     <!-- Signup Form -->
+     <form class="space-y-4 hidden" id="signup-form">
+      <h2 class="text-2xl font-bold text-green-700 text-center">
+       Create Account
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+       <div>
+        <label class="block font-semibold mb-1" for="signupFirstName">
+         First Name
+        </label>
+        <input autocomplete="given-name" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="signupFirstName" name="signupFirstName" required="" type="text"/>
+       </div>
+       <div>
+        <label class="block font-semibold mb-1" for="signupLastName">
+         Last Name
+        </label>
+        <input autocomplete="family-name" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="signupLastName" name="signupLastName" required="" type="text"/>
+       </div>
+      </div>
+      <div>
+       <label class="block font-semibold mb-1" for="signupPhone">
+        Phone
+       </label>
+       <input autocomplete="tel" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="signupPhone" name="signupPhone" pattern="^\+?[0-9\s\-]{7,15}$" required="" title="Enter a valid phone number" type="tel"/>
+      </div>
+      <div>
+       <label class="block font-semibold mb-1" for="signupEmail">
+        Email
+       </label>
+       <input autocomplete="email" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="signupEmail" name="signupEmail" required="" type="email"/>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+       <div>
+        <label class="block font-semibold mb-1" for="signupPassword">
+         Password
+        </label>
+        <input autocomplete="new-password" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="signupPassword" name="signupPassword" required="" type="password"/>
+       </div>
+       <div>
+        <label class="block font-semibold mb-1" for="signupConfirmPassword">
+         Confirm Password
+        </label>
+        <input autocomplete="new-password" class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="signupConfirmPassword" name="signupConfirmPassword" required="" type="password"/>
+       </div>
+      </div>
+      <div class="flex justify-between items-center text-sm">
+       <button class="text-blue-600 hover:underline focus:outline-none" id="show-login" type="button">
+        Already have an account?
+       </button>
+      </div>
+      <button aria-label="Create account" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-6 py-3 transition" type="submit">
+       Sign Up
+      </button>
+     </form>
+     <!-- Logged-in User View -->
+     <div class="hidden space-y-6" id="account-logged-in">
+      <h2 class="text-2xl font-bold text-green-700 text-center">
+       My Account
+      </h2>
+      <div class="bg-beige-100 p-4 rounded-lg shadow-md">
+       <h3 class="font-semibold text-lg mb-2">
+        Personal Information
+       </h3>
+       <p>
+        <strong>
+         Name:
+        </strong>
+        <span id="user-fullname">
+        </span>
+       </p>
+       <p>
+        <strong>
+         Phone:
+        </strong>
+        <span id="user-phone">
+        </span>
+       </p>
+       <p>
+        <strong>
+         Email:
+        </strong>
+        <span id="user-email">
+        </span>
+       </p>
+       <button aria-label="Update profile" class="mt-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md px-4 py-2 transition" id="btn-update-profile">
+        Update Profile
+       </button>
+      </div>
+      <div class="bg-beige-100 p-4 rounded-lg shadow-md">
+       <h3 class="font-semibold text-lg mb-2">
+        Order History
+       </h3>
+       <ul class="list-disc list-inside max-h-48 overflow-y-auto text-black/90 space-y-1" id="order-history">
+       </ul>
+      </div>
+      <button aria-label="Logout" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md px-6 py-3 transition" id="btn-logout">
+       Logout
+      </button>
+     </div>
+    </div>
+   </section>
+   <section class="page hidden max-w-3xl mx-auto space-y-8" id="page-customer-service">
+    <h2 class="text-2xl font-bold text-green-700 text-center">
+     Customer Service
+    </h2>
+    <form class="space-y-6 bg-beige-100 p-6 rounded-lg shadow-md" id="contact-form">
+     <div>
+      <label class="block font-semibold mb-1" for="contactName">
+       Name
+      </label>
+      <input class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="contactName" name="contactName" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block font-semibold mb-1" for="contactEmail">
+       Email
+      </label>
+      <input class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" id="contactEmail" name="contactEmail" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block font-semibold mb-1" for="contactMessage">
+       Message
+      </label>
+      <textarea class="w-full border border-green-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-600 resize-none" id="contactMessage" name="contactMessage" required="" rows="4"></textarea>
+     </div>
+     <button aria-label="Submit contact form" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-6 py-3 transition" type="submit">
+      Submit
+     </button>
+    </form>
+    <div>
+     <h3 class="text-xl font-semibold text-green-700 mb-3">
+      Frequently Asked Questions
+     </h3>
+     <dl class="space-y-4 text-black/90">
+      <div>
+       <dt class="font-semibold">
+        Is FreshVerde detergent safe for all surfaces?
+       </dt>
+       <dd>
+        Yes, it is formulated to be gentle and effective on most household surfaces.
+       </dd>
+      </div>
+      <div>
+       <dt class="font-semibold">
+        Are your products eco-friendly?
+       </dt>
+       <dd>
+        Absolutely! We use biodegradable ingredients and sustainable packaging.
+       </dd>
+      </div>
+      <div>
+       <dt class="font-semibold">
+        How long does shipping take?
+       </dt>
+       <dd>
+        Shipping typically takes 3-5 business days within the country.
+       </dd>
+      </div>
+     </dl>
+    </div>
+   </section>
+   <section class="page hidden max-w-6xl mx-auto space-y-8" id="page-admin">
+    <h2 class="text-2xl font-bold text-green-700 text-center">
+     Admin Dashboard
+    </h2>
+    <div>
+     <h3 class="text-xl font-semibold mb-3">
+      Orders
+     </h3>
+     <table class="w-full border border-green-400 rounded-md text-left text-sm">
+      <thead class="bg-green-100">
+       <tr>
+        <th class="border border-green-300 px-3 py-2">
+         Customer Name
+        </th>
+        <th class="border border-green-300 px-3 py-2">
+         Phone
+        </th>
+        <th class="border border-green-300 px-3 py-2">
+         Product Size
+        </th>
+        <th class="border border-green-300 px-3 py-2">
+         Address
+        </th>
+        <th class="border border-green-300 px-3 py-2">
+         Status
+        </th>
+        <th class="border border-green-300 px-3 py-2">
+         Actions
+        </th>
+       </tr>
+      </thead>
+      <tbody class="bg-white" id="admin-orders-body">
+      </tbody>
+     </table>
+    </div>
+    <div>
+     <h3 class="text-xl font-semibold mb-3">
+      Chat Inbox
+     </h3>
+     <div class="border border-green-400 rounded-md p-4 max-h-96 overflow-y-auto bg-beige-100" id="admin-chat-inbox">
+      <p class="text-black/70 italic">
+       Select a customer chat to start conversation.
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-beige-50 border-t border-green-600 p-6 mt-auto">
+   <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+    <div class="flex items-center space-x-2">
+     <img alt="FreshVerde logo green square with FV letters" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/946116fa-d616-4684-0435-b5e5b7ab95a9.jpg" width="40"/>
+     <span class="font-bold text-green-700 text-lg">
+      FreshVerde
+     </span>
+    </div>
+    <p class="text-black/70 text-sm">
+     © 2024 FreshVerde. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <!-- Live Chat Bubble -->
+  <div aria-label="Open live chat" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white rounded-full w-14 h-14 flex items-center justify-center cursor-pointer shadow-lg z-50" id="chat-bubble" role="button" tabindex="0">
+   <i class="fas fa-comments fa-lg">
+   </i>
+  </div>
+  <!-- Live Chat Window -->
+  <div aria-labelledby="chat-window-title" aria-modal="true" class="fixed bottom-20 right-6 w-80 max-w-full bg-beige-100 border border-green-600 rounded-lg shadow-lg flex flex-col overflow-hidden hidden z-50" id="chat-window" role="dialog">
+   <header class="bg-green-600 text-white px-4 py-3 flex justify-between items-center">
+    <h3 class="font-semibold text-lg" id="chat-window-title">
+     Live Chat
+    </h3>
+    <button aria-label="Close chat window" class="text-white hover:text-green-300 focus:outline-none" id="chat-close-btn">
+     <i class="fas fa-times">
+     </i>
+    </button>
+   </header>
+   <div class="flex-grow p-4 space-y-3 overflow-y-auto chat-scroll bg-white text-black text-sm" id="chat-messages">
+   </div>
+   <form class="flex border-t border-green-300" id="chat-form">
+    <input aria-label="Type your message" autocomplete="off" class="flex-grow px-3 py-2 focus:outline-none" id="chat-input" placeholder="Type your message..." required="" type="text"/>
+    <button aria-label="Send message" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 disabled:opacity-50 disabled:cursor-not-allowed" type="submit">
+     Send
+    </button>
+   </form>
+  </div>
+  <script>
+   // Brand colors for reference
+    const COLORS = {
+      green: '#4ade80',
+      greenDark: '#064e03',
+      black: '#000000',
+      blue: '#2563eb',
+      beige: '#f5f5dc',
+    };
+
+    // Product data
+    const products = [
+      { id: 'p120', volume: '120 ml', price: 4.99, image: 'https://storage.googleapis.com/a1aa/image/478605ee-f7e9-4ec8-672c-3fba58b5fc7f.jpg' },
+      { id: 'p250', volume: '250 ml', price: 7.99, image: 'https://storage.googleapis.com/a1aa/image/3af9aa62-d11e-4f4d-1236-ec948df48bf6.jpg' },
+      { id: 'p500', volume: '500 ml', price: 12.99, image: 'https://storage.googleapis.com/a1aa/image/08c075c8-c7d8-469d-d31e-95efadc5adf7.jpg' },
+      { id: 'p1000', volume: '1 Liter', price: 19.99, image: 'https://storage.googleapis.com/a1aa/image/af5a8898-4e33-4c38-cf3e-f58aadb32fd6.jpg' },
+    ];
+
+    // State
+    let cart = [];
+    let currentUser = null; // {firstName, lastName, phone, email}
+    let orders = [];
+    let isAdmin = false; // toggle for admin view
+
+    // Cached DOM elements
+    const pages = document.querySelectorAll('.page');
+    const navHomeLink = document.getElementById('nav-home-link');
+    const navProductsLink = document.getElementById('nav-products-link');
+    const navCustomerServiceLink = document.getElementById('nav-customer-service-link');
+    const navCartLink = document.getElementById('nav-cart-link');
+    const navAccountLink = document.getElementById('nav-account-link');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavHome = document.getElementById('mobile-nav-home');
+    const mobileNavProducts = document.getElementById('mobile-nav-products');
+    const mobileNavCustomerService = document.getElementById('mobile-nav-customer-service');
+    const mobileNavCart = document.getElementById('mobile-nav-cart');
+    const mobileNavAccount = document.getElementById('mobile-nav-account');
+    const cartCount = document.getElementById('cart-count');
+    const mobileCartCount = document.getElementById('mobile-cart-count');
+
+    // Pages
+    const pageHome = document.getElementById('page-home');
+    const pageProducts = document.getElementById('page-products');
+    const pageCart = document.getElementById('page-cart');
+    const pageCheckout = document.getElementById('page-checkout');
+    const pageAccount = document.getElementById('page-account');
+    const pageCustomerService = document.getElementById('page-customer-service');
+    const pageAdmin = document.getElementById('page-admin');
+
+    // Products container
+    const productsGrid = pageProducts.querySelector('div.grid');
+
+    // Cart elements
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartSubtotalEl = document.getElementById('cart-subtotal');
+    const btnToCheckout = document.getElementById('btn-to-checkout');
+
+    // Checkout elements
+    const checkoutForm = document.getElementById('checkout-form');
+    const checkoutSummary = document.getElementById('checkout-summary');
+    const checkoutTotal = document.getElementById('checkout-total');
+
+    // Account elements
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const accountLoggedIn = document.getElementById('account-logged-in');
+    const btnShowSignup = document.getElementById('show-signup');
+    const btnShowLogin = document.getElementById('show-login');
+    const btnLogout = document.getElementById('btn-logout');
+    const userFullname = document.getElementById('user-fullname');
+    const userPhone = document.getElementById('user-phone');
+    const userEmail = document.getElementById('user-email');
+    const orderHistoryList = document.getElementById('order-history');
+
+    // Customer service form
+    const contactForm = document.getElementById('contact-form');
+
+    // Admin elements
+    const adminOrdersBody = document.getElementById('admin-orders-body');
+    const adminChatInbox = document.getElementById('admin-chat-inbox');
+
+    // Navigation buttons
+    const btnToProducts = document.getElementById('btn-to-products');
+
+    // FreshVerde logo links
+    const navHome = document.getElementById('nav-home');
+
+    // Mobile menu toggle
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Navigation handlers
+    function showPage(page) {
+      pages.forEach((p) => p.classList.add('hidden'));
+      page.classList.remove('hidden');
+      mobileMenu.classList.add('hidden');
+      if (page === pageAdmin) {
+        renderAdminOrders();
+      }
+    }
+
+    navHomeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageHome);
+    });
+    navProductsLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageProducts);
+    });
+    navCustomerServiceLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageCustomerService);
+    });
+    navCartLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageCart);
+      renderCart();
+    });
+    navAccountLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageAccount);
+      renderAccount();
+    });
+
+    mobileNavHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageHome);
+    });
+    mobileNavProducts.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageProducts);
+    });
+    mobileNavCustomerService.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageCustomerService);
+    });
+    mobileNavCart.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageCart);
+      renderCart();
+    });
+    mobileNavAccount.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageAccount);
+      renderAccount();
+    });
+
+    navHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage(pageHome);
+    });
+
+    btnToProducts.addEventListener('click', () => {
+      showPage(pageProducts);
+    });
+
+    btnToCheckout.addEventListener('click', () => {
+      showPage(pageCheckout);
+      renderCheckoutSummary();
+    });
+
+    // Render product cards
+    function renderProducts() {
+      productsGrid.innerHTML = '';
+      products.forEach((product) => {
+        const card = document.createElement('div');
+        card.className = 'border border-green-300 rounded-lg p-4 flex flex-col items-center bg-beige-100 shadow-sm';
+        card.setAttribute('role', 'region');
+        card.setAttribute('aria-label', `Product ${product.volume} Eco-Detergent`);
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = `Eco-Detergent ${product.volume} bottle with green label and eco-friendly branding`;
+        img.className = 'w-32 h-32 object-contain mb-4';
+        img.height = 128;
+        img.width = 128;
+
+        const h3 = document.createElement('h3');
+        h3.className = 'text-lg font-semibold text-black mb-1';
+        h3.textContent = product.volume;
+
+        const price = document.createElement('p');
+        price.className = 'text-green-700 font-bold text-xl mb-3';
+        price.textContent = `$${product.price.toFixed(2)}`;
+
+        const btn = document.createElement('button');
+        btn.className = 'bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md px-4 py-2 transition w-full';
+        btn.setAttribute('aria-label', `Add ${product.volume} Eco-Detergent to cart`);
+        btn.textContent = 'Add to Cart';
+        btn.addEventListener('click', () => addToCart(product.id));
+
+        card.appendChild(img);
+        card.appendChild(h3);
+        card.appendChild(price);
+        card.appendChild(btn);
+
+        productsGrid.appendChild(card);
+      });
+    }
+
+    // Add to cart
+    function addToCart(productId) {
+      const product = products.find((p) => p.id === productId);
+      if (!product) return;
+      const cartItem = cart.find((item) => item.product.id === productId);
+      if (cartItem) {
+        cartItem.quantity++;
+      } else {
+        cart.push({ product, quantity: 1 });
+      }
+      updateCartCount();
+      alert(`Added ${product.volume} Eco-Detergent to cart.`);
+    }
+
+    // Update cart count badges
+    function updateCartCount() {
+      const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+      cartCount.textContent = count;
+      mobileCartCount.textContent = count;
+    }
+
+    // Render cart page
+    function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p class="text-center text-black/70">Your cart is empty.</p>';
+        cartSubtotalEl.textContent = '$0.00';
+        btnToCheckout.disabled = true;
+        return;
+      }
+      btnToCheckout.disabled = false;
+      cart.forEach(({ product, quantity }, index) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'flex items-center justify-between border border-green-300 rounded-md p-3 bg-beige-100 shadow-sm';
+
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'flex items-center space-x-4';
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = `Eco-Detergent product image for ${product.volume}`;
+        img.className = 'w-16 h-16 object-contain rounded';
+
+        const textDiv = document.createElement('div');
+        textDiv.className = 'flex flex-col';
+
+        const vol = document.createElement('p');
+        vol.textContent = product.volume;
+        vol.className = 'font-semibold text-black';
+
+        const price = document.createElement('p');
+        price.textContent = `$${product.price.toFixed(2)}`;
+        price.className = 'text-green-700 font-bold';
+
+        textDiv.appendChild(vol);
+        textDiv.appendChild(price);
+
+        infoDiv.appendChild(img);
+        infoDiv.appendChild(textDiv);
+
+        const qtyDiv = document.createElement('div');
+        qtyDiv.className = 'flex items-center space-x-2';
+
+        const qtyLabel = document.createElement('label');
+        qtyLabel.setAttribute('for', `qty-${index}`);
+        qtyLabel.className = 'sr-only';
+        qtyLabel.textContent = `Quantity for ${product.volume}`;
+
+        const qtyInput = document.createElement('input');
+        qtyInput.type = 'number';
+        qtyInput.min = '1';
+        qtyInput.value = quantity;
+        qtyInput.id = `qty-${index}`;
+        qtyInput.className = 'w-16 border border-green-400 rounded-md px-2 py-1 text-center focus:outline-none focus:ring-2 focus:ring-green-600';
+        qtyInput.addEventListener('change', (e) => {
+          let val = parseInt(e.target.value);
+          if (isNaN(val) || val < 1) val = 1;
+          e.target.value = val;
+          cart[index].quantity = val;
+          renderCart();
+        });
+
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'text-red-600 hover:text-red-800 focus:outline-none';
+        removeBtn.setAttribute('aria-label', `Remove ${product.volume} from cart`);
+        removeBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        removeBtn.addEventListener('click', () => {
+          cart.splice(index, 1);
+          renderCart();
+          updateCartCount();
+        });
+
+        qtyDiv.appendChild(qtyLabel);
+        qtyDiv.appendChild(qtyInput);
+        qtyDiv.appendChild(removeBtn);
+
+        itemDiv.appendChild(infoDiv);
+        itemDiv.appendChild(qtyDiv);
+
+        cartItemsContainer.appendChild(itemDiv);
+      });
+
+      const subtotal = cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+      cartSubtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    }
+
+    // Render checkout summary
+    function renderCheckoutSummary() {
+      checkoutSummary.innerHTML = '';
+      if (cart.length === 0) {
+        checkoutSummary.innerHTML = '<li>Your cart is empty.</li>';
+        checkoutTotal.textContent = '$0.00';
+        return;
+      }
+      cart.forEach(({ product, quantity }) => {
+        const li = document.createElement('li');
+        li.textContent = `${quantity} × ${product.volume} Eco-Detergent - $${(product.price * quantity).toFixed(2)}`;
+        checkoutSummary.appendChild(li);
+      });
+      const total = cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+      checkoutTotal.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Handle checkout form submission
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert('Your cart is empty.');
+        return;
+      }
+      const formData = new FormData(checkoutForm);
+      const order = {
+        id: `order-${Date.now()}`,
+        customer: {
+          firstName: formData.get('firstName').trim(),
+          lastName: formData.get('lastName').trim(),
+          phone: formData.get('phone').trim(),
+          address: formData.get('address').trim(),
+        },
+        items: cart.map(({ product, quantity }) => ({ product, quantity })),
+        status: 'Pending',
+        date: new Date().toLocaleString(),
+      };
+      orders.push(order);
+      if (currentUser) {
+        if (!currentUser.orders) currentUser.orders = [];
+        currentUser.orders.push(order);
+      }
+      alert('Order confirmed! Thank you for your purchase.');
+      cart = [];
+      updateCartCount();
+      checkoutForm.reset();
+      showPage(pageHome);
+    });
+
+    // Account page rendering
+    function renderAccount() {
+      if (currentUser) {
+        loginForm.classList.add('hidden');
+        signupForm.classList.add('hidden');
+        accountLoggedIn.classList.remove('hidden');
+        userFullname.textContent = `${currentUser.firstName} ${currentUser.lastName}`;
+        userPhone.textContent = currentUser.phone;
+        userEmail.textContent = currentUser.email;
+        renderOrderHistory();
+      } else {
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+        accountLoggedIn.classList.add('hidden');
+      }
+    }
+
+    // Render order history for logged-in user
+    function renderOrderHistory() {
+      orderHistoryList.innerHTML = '';
+      if (!currentUser.orders || currentUser.orders.length === 0) {
+        orderHistoryList.innerHTML = '<li>No orders placed yet.</li>';
+        return;
+      }
+      currentUser.orders.forEach((order) => {
+        const li = document.createElement('li');
+        li.textContent = `${order.date} - ${order.items.length} item(s) - Status: ${order.status}`;
+        orderHistoryList.appendChild(li);
+      });
+    }
+
+    // Login form submit
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = e.target.loginEmail.value.trim().toLowerCase();
+      const password = e.target.loginPassword.value;
+      // Simulate login: accept any email/password, create user if not exist
+      if (!email || !password) {
+        alert('Please enter email and password.');
+        return;
+      }
+      // For demo, create a dummy user or admin
+      if (email === 'admin@freshverde.com') {
+        currentUser = {
+          firstName: 'Admin',
+          lastName: 'User',
+          phone: 'N/A',
+          email,
+          orders: [],
+        };
+        isAdmin = true;
+        alert('Logged in as Admin.');
+        showPage(pageAdmin);
+      } else {
+        currentUser = {
+          firstName: 'John',
+          lastName: 'Doe',
+          phone: '+1234567890',
+          email,
+          orders: [],
+        };
+        isAdmin = false;
+        alert(`Welcome back, ${currentUser.firstName}!`);
+        showPage(pageHome);
+      }
+      renderAccount();
+      loginForm.reset();
+    });
+
+    // Signup form toggle
+    btnShowSignup.addEventListener('click', () => {
+      loginForm.classList.add('hidden');
+      signupForm.classList.remove('hidden');
+      accountLoggedIn.classList.add('hidden');
+    });
+    btnShowLogin.addEventListener('click', () => {
+      loginForm.classList.remove('hidden');
+      signupForm.classList.add('hidden');
+      accountLoggedIn.classList.add('hidden');
+    });
+
+    // Signup form submit
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(signupForm);
+      const firstName = formData.get('signupFirstName').trim();
+      const lastName = formData.get('signupLastName').trim();
+      const phone = formData.get('signupPhone').trim();
+      const email = formData.get('signupEmail').trim().toLowerCase();
+      const password = formData.get('signupPassword');
+      const confirmPassword = formData.get('signupConfirmPassword');
+      if (!firstName || !lastName || !phone || !email || !password || !confirmPassword) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return;
+      }
+      currentUser = { firstName, lastName, phone, email, orders: [] };
+      isAdmin = false;
+      alert(`Account created! Welcome, ${firstName}.`);
+      renderAccount();
+      showPage(pageHome);
+      signupForm.reset();
+    });
+
+    // Logout button
+    btnLogout.addEventListener('click', () => {
+      currentUser = null;
+      isAdmin = false;
+      alert('You have been logged out.');
+      renderAccount();
+      showPage(pageHome);
+    });
+
+    // Contact form submit
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for contacting FreshVerde! We will get back to you shortly.');
+      contactForm.reset();
+    });
+
+    // Admin orders rendering
+    function renderAdminOrders() {
+      if (!isAdmin) {
+        adminOrdersBody.innerHTML = '<tr><td colspan="6" class="text-center p-4 text-red-600 font-semibold">Access denied. Admin only.</td></tr>';
+        return;
+      }
+      if (orders.length === 0) {
+        adminOrdersBody.innerHTML = '<tr><td colspan="6" class="text-center p-4 text-black/70">No orders yet.</td></tr>';
+        return;
+      }
+      adminOrdersBody.innerHTML = '';
+      orders.forEach((order, index) => {
+        const tr = document.createElement('tr');
+        tr.className = index % 2 === 0 ? 'bg-green-50' : '';
+
+        const tdName = document.createElement('td');
+        tdName.className = 'border border-green-300 px-3 py-2';
+        tdName.textContent = `${order.customer.firstName} ${order.customer.lastName}`;
+
+        const tdPhone = document.createElement('td');
+        tdPhone.className = 'border border-green-300 px-3 py-2';
+        tdPhone.textContent = order.customer.phone;
+
+        const tdSize = document.createElement('td');
+        tdSize.className = 'border border-green-300 px-3 py-2';
+        tdSize.textContent = order.items.map((i) => i.product.volume).join(', ');
+
+        const tdAddress = document.createElement('td');
+        tdAddress.className = 'border border-green-300 px-3 py-2';
+        tdAddress.textContent = order.customer.address;
+
+        const tdStatus = document.createElement('td');
+        tdStatus.className = 'border border-green-300 px-3 py-2';
+        const select = document.createElement('select');
+        select.className = 'border border-green-400 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-600';
+        ['Pending', 'Shipped', 'Completed', 'Cancelled'].forEach((status) => {
+          const option = document.createElement('option');
+          option.value = status;
+          option.textContent = status;
+          if (order.status === status) option.selected = true;
+          select.appendChild(option);
+        });
+        select.addEventListener('change', (e) => {
+          order.status = e.target.value;
+          alert(`Order status updated to ${order.status}`);
+          renderAccount();
+        });
+        tdStatus.appendChild(select);
+
+        const tdActions = document.createElement('td');
+        tdActions.className = 'border border-green-300 px-3 py-2 text-center';
+        const btnComplete = document.createElement('button');
+        btnComplete.className = 'bg-green-600 hover:bg-green-700 text-white rounded px-3 py-1 text-sm font-semibold';
+        btnComplete.textContent = 'Mark Completed';
+        btnComplete.addEventListener('click', () => {
+          order.status = 'Completed';
+          alert('Order marked as Completed.');
+          renderAdminOrders();
+          renderAccount();
+        });
+        tdActions.appendChild(btnComplete);
+
+        tr.appendChild(tdName);
+        tr.appendChild(tdPhone);
+        tr.appendChild(tdSize);
+        tr.appendChild(tdAddress);
+        tr.appendChild(tdStatus);
+        tr.appendChild(tdActions);
+
+        adminOrdersBody.appendChild(tr);
+      });
+    }
+
+    // Live chat functionality
+    const chatBubble = document.getElementById('chat-bubble');
+    const chatWindow = document.getElementById('chat-window');
+    const chatCloseBtn = document.getElementById('chat-close-btn');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+
+    let chatOpen = false;
+
+    chatBubble.addEventListener('click', () => {
+      chatOpen = !chatOpen;
+      chatWindow.classList.toggle('hidden', !chatOpen);
+      if (chatOpen) {
+        chatInput.focus();
+        if (chatMessages.children.length === 0) {
+          addChatMessage('customer', 'Hello');
+          setTimeout(() => {
+            addChatMessage('admin', 'Hi! How can I help you?');
+          }, 800);
+        }
+      }
+    });
+
+    chatCloseBtn.addEventListener('click', () => {
+      chatOpen = false;
+      chatWindow.classList.add('hidden');
+    });
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const msg = chatInput.value.trim();
+      if (!msg) return;
+      addChatMessage('customer', msg);
+      chatInput.value = '';
+      setTimeout(() => {
+        addChatMessage('admin', 'Thank you for your message. We will get back to you shortly.');
+      }, 1000);
+    });
+
+    function addChatMessage(sender, message) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className =
+        sender === 'admin'
+          ? 'bg-green-100 text-green-900 rounded-lg p-2 max-w-[80%] self-start'
+          : 'bg-green-600 text-white rounded-lg p-2 max-w-[80%] self-end';
+      msgDiv.textContent = message;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Initialize
+    renderProducts();
+    updateCartCount();
+    showPage(pageHome);
+  </script>
+ </body>
+</html>
